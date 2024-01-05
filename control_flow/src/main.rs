@@ -32,4 +32,25 @@ fn main() {
        x = 2;
      }
      println!("Value of x: {x}");
+
+     // LOOPS
+     // Two important things:
+     //     - break: breaks out from the loop.
+     //     - continue: skips the code below it and starts next iteration.
+
+     loop {
+         println!("Again!");
+         break;
+     }
+
+     // Loop can return a value!
+     let mut counter = 0;
+     let result = loop {
+         counter += 1;
+         if counter == 10 {
+             break counter * 2;
+         }
+     };
+
+     println!("The result is {result}");
 }
