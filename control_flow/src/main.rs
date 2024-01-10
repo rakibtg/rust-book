@@ -53,4 +53,40 @@ fn main() {
      };
 
      println!("The result is {result}");
+
+     // Loop labels: In a nested loop setup break and continue can be called for parent loops by it's label.
+     // Important: Loop labels must begin with a single quote.
+     let mut count = 0;
+     'counting_up: loop {
+         println!("count = {count}");
+         let mut remaining = 10;
+
+         loop {
+             println!("remaining = {remaining}");
+
+             if remaining == 9 { break; }
+             if count == 2 { break 'counting_up; }
+
+             remaining -= 1;
+         }
+
+         count += 1;
+     }
+
+     // While loop or conditional loop:
+     let mut w_number = 3;
+     while w_number != 0 {
+         println!("{w_number}");
+         w_number -= 1;
+     }
+     println!("While loop has ended.");
+
+     // for loop to iterate over an array element.
+     let an_array = [10, 20, 30, 40, 50];
+     for element in an_array{
+         println!("The value is: {element}");
+     }
+     for rev_num in (1..5).rev() {
+         println!("{rev_num}");
+     }
 }
